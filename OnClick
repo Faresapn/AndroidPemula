@@ -1,0 +1,31 @@
+  adapter.setOnItemClickListener(new Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Items mItems = new Items();
+                mItems.setImage(photoData.getResourceId(position, -1));
+                mItems.setTitle(titleData[position]);
+                mItems.setInfo(overviewData[position]);
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra("data", mItems);
+                startActivity(intent);
+            }
+        }); 
+        
+     }
+     
+     
+        //untuk menjadikan recycler view OnClick
+        
+        public void prepare (){
+        titleData = getResources().getStringArray(R.array.club_name);
+        overviewData = getResources().getStringArray(R.array.league_info);
+        photoData = getResources().obtainTypedArray(R.array.club_image);
+    }
+        //memanggil array 
+        
+        
+        
+        
+        nah main activity itu bagaikan Adapternya Onclick jadi bikin Recycler view nya dulu aja
+        nah sebelumya seperti setImage seTitle dan setInfo dibuat dulu get set nya di items.java. items.java hanya sebuah class bukan activity.
+        nek esih bingung wa maning bae kie gari diapus
